@@ -1,0 +1,51 @@
+<mat-card class="resultscard">    
+    <mat-card-title>{{ color }}</mat-card-title>
+    <hr>
+    <div class="main-container">
+        <div class="row">
+            <div class="col-sm-3 card">
+                    <h1 class="card-title">Emba:</h1> 
+                <mat-form-field appearance="outline">
+                    <mat-label>Neue Eimer</mat-label>                    
+                    <input matInput [(ngModel)]="embanew" autocomplete="off" type="number" [style.fontSize.px]=20 >
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Gemischte Eimer</mat-label>
+                    <input matInput [(ngModel)]="embamixed" autocomplete = "off" type="number" [style.fontSize.px]=20>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-3 card">
+                    <h1 class="card-title">Simca:</h1>
+                <mat-form-field appearance="outline">
+                    <mat-label>Neue Eimer</mat-label>
+                    <input matInput [(ngModel)]="simcanew" autocomplete="off" type="number" [style.fontSize.px]=20>        
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Gemischte Eimer</mat-label>
+                    <input matInput [(ngModel)]="simcamixed" autocomplete="off" type="number" [style.fontSize.px]=20>
+                </mat-form-field>
+            </div>
+        </div>
+    </div> 
+        <div class="row">
+            <div>
+                <button mat-raised-button color="primary" (click)="onsaveMenge()" style="margin-top: 5px;">Menge Speichern</button>
+            </div>
+                <div>
+                <mat-form-field>        
+                    <input matInput [(ngModel)]="newname" placeholder="Neue Name" autocomplete="off" required>
+                </mat-form-field>
+                <button mat-raised-button class="bunton" color="primary" (click)="onChangeName()">Name andern</button>       
+                </div>
+                <div>
+                <button mat-raised-button color="warn" (click)="onDeleteColor()" onsubmit="confirm('Farbe loschen?')" style="margin-top:7px;">Farbe Loschen</button> 
+            </div>
+        </div> 
+        <hr>
+        <div class="row">
+            <a mat-raised-button color="primary" target="_blanck" href="http://127.0.0.1:5000/api/colors" style="margin-left: 2rem;">Alle Farben</a>
+        </div>
+</mat-card>
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+<title>Alle Farben</title>
+</head>
+<body>
+</form>
+<table style="width:80%; margin-left: 2cm;">
+  <tr>
+    <th rowspan ="2">Name</th>
+    <th colspan="2">Emba</th>
+    <th colspan="2">Simca</th>
+    <th colspan="2">Total</th>
+  </tr>
+  <tr>
+    <th>neue eimer</th>
+    <th>gemischte eimer</th>
+    <th>neue eimer</th>
+    <th>gemischte eimer</th>
+    <th>neue eimer total</th>
+    <th>gemischte eimer total</th>
+  </tr>
+  {% for j in x %}
+   <tr>
+    <td>{{j.name}}</td>
+    <td>{{j.embanew}}</td>
+    <td>{{j.embamixed}}</td>
+    <td>{{j.simcanew}}</td>
+    <td>{{j.simcamixed}}</td>
+    <td>{{j.totalnew}}</td>
+    <td>{{j.totalmixed}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>

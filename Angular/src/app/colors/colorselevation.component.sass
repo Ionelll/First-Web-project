@@ -1,0 +1,27 @@
+@import '~@angular/material/theming'
+
+.searchcard 
+    @include mat-elevation-transition
+    @include mat-elevation(0)
+    &:hover
+        @include mat-elevation(1)
+.mat-toolbar
+    @include mat-elevation(2)
+
+.searchcard  
+    width: 100%
+    min-height: 10rem
+    margin: auto
+    margin-top: 1rem
+
+.mat-card-title
+    margin-top: -1rem
+
+.searchinput
+    min-width: 70%
+
+.row
+    margin-top: 2rem
+
+.searchbutton
+    margin-left: 1rem

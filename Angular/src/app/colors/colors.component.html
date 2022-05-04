@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">Farben</mat-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <mat-card class="searchcard">
+                <mat-card-title class="title">Farbe Suchen</mat-card-title>
+                <hr>
+                <form (submit)="onSearchColor()">
+                    <mat-form-field class="searchinput">
+                    <mat-icon color= "primary" matPrefix>search</mat-icon>
+                    <input matInput type="text"  placeholder="Farbe" name="searchinput" required [formControl]="myControl" [matAutocomplete] = 'auto'>
+                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSearchColor();myControl.markAsUntouched" >
+                            <mat-option *ngFor="let option of filteredoptions | async" [value]="option">
+                                {{option}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" class="searchbutton" type="submit">Suchen</button>
+                </form>
+            </mat-card>
+        </div>
+        <div class="col">
+             <mat-card class="searchcard">
+                <mat-card-title class="title">Neue Farbe hinzufugen</mat-card-title>
+                <hr>
+                <form (submit)="onAddColor(addcolorform)" #addcolorform="ngForm">
+                    <mat-form-field class="searchinput">
+                        <input matInput type="text" autocomplete="off" placeholder="Farbe Name" name="addcolorinput" required ngModel >
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" class="searchbutton" type="submit">Speichern</button>
+                </form>
+            </mat-card>
+        </div>    
+    </div>
+</div>
+
